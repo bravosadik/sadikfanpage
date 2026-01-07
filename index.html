@@ -1,0 +1,277 @@
+import React, { useState, useEffect } from 'react';
+import { Atom, Brain, Heart, Music, Dumbbell, FlaskConical, Calculator, Palette, Cpu, Stethoscope } from 'lucide-react';
+
+export default function SadikSariPortfolio() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const talents = [
+    {
+      icon: <Dumbbell className="w-12 h-12" />,
+      title: "Spor & Bale",
+      description: "Estetik ve gücün dansı. Atletik yapı ile zarafetin mükemmel birleşimi. Her hareket hesaplı, her adım bir sanat eseri.",
+      color: "from-red-500 to-orange-500"
+    },
+    {
+      icon: <Calculator className="w-12 h-12" />,
+      title: "Matematik",
+      description: "Sayılarla dans eden zihin. İntegraller ve türevler günlük bir bulmaca. Evrenin dilini konuşan bir matematikçi.",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: <Atom className="w-12 h-12" />,
+      title: "Fizik",
+      description: "Evrenin kuralları onun oyun alanı. Kuvvet, hareket ve enerji arasındaki ilişkiyi içgüdüsel olarak bilen bir fizikçi.",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: <FlaskConical className="w-12 h-12" />,
+      title: "Kimya",
+      description: "Elementlerin dilinden anlayan simyacı. Moleküller arası bağları çözen titiz bir analitik zekanın sahibi.",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: <Music className="w-12 h-12" />,
+      title: "Sanat & Müzik",
+      description: "Ruhu besleyen yaratıcılık. Müziğin ritmini kalbiyle duyan, renklerin ve formların dilini konuşan bir sanatçı ruhu.",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: <Cpu className="w-12 h-12" />,
+      title: "Mühendislik",
+      description: "Teoriyi pratiğe döken usta. Karmaşık sistemleri kurgulayan, sorunlara en verimli çözümleri üreten vizyon.",
+      color: "from-indigo-500 to-blue-500"
+    },
+    {
+      icon: <Stethoscope className="w-12 h-12" />,
+      title: "Tıp",
+      description: "İnsan anatomisine hakim, yaşamın biyolojik mucizesine saygılı. Hayat kurtaran vizyonun sahibi.",
+      color: "from-teal-500 to-cyan-500"
+    },
+    {
+      icon: <Palette className="w-12 h-12" />,
+      title: "Estetik Anlayışı",
+      description: "Güzelliği her alanda yakalayan göz. Sanat ve bilimin kesiştiği noktada duran benzersiz bir estetik anlayış.",
+      color: "from-pink-500 to-rose-500"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-black opacity-80"></div>
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(88, 166, 255, 0.3) 0%, transparent 50%)',
+          animation: 'pulse 8s ease-in-out infinite'
+        }}></div>
+      </div>
+
+      {/* Header */}
+      <header className="fixed top-0 w-full z-50 bg-black bg-opacity-30 backdrop-blur-xl border-b border-white border-opacity-10">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Brain className="w-8 h-8 text-cyan-400" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Sadık Sarı
+              </span>
+            </div>
+            <nav className="hidden md:flex space-x-8 text-sm">
+              <a href="#home" className="hover:text-cyan-400 transition">Ana Sayfa</a>
+              <a href="#about" className="hover:text-cyan-400 transition">Hakkında</a>
+              <a href="#talents" className="hover:text-cyan-400 transition">Yetenekler</a>
+              <a href="#vision" className="hover:text-cyan-400 transition">Vizyon</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="container mx-auto relative z-10">
+          <div className="text-center">
+            <div className="mb-12 relative inline-block">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+              <div className="relative">
+                <img 
+                  src="https://raw.githubusercontent.com/Arassaklak/images/refs/heads/main/608845905_1886124988957292_4591681918812164445_n-removebg-preview.png"
+                  alt="Sadık Sarı"
+                  className="w-80 h-80 object-contain mx-auto"
+                  style={{
+                    filter: 'drop-shadow(0 0 40px rgba(34, 211, 238, 0.6))',
+                    transform: `translateY(${scrollY * 0.1}px)`
+                  }}
+                />
+              </div>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Sadık Sarı
+              </span>
+            </h1>
+            
+            <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
+              Evrensel Bir Deha
+            </p>
+            
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Leonardo da Vinci'nin modern dünyadaki yansıması. Disiplinler arası mükemmeliyetin canlı bir kanıtı.
+              Sporcunun disiplinine, sanatçının ruhuna, bilim insanının merakına ve mühendisin pratik zekasına aynı anda sahip.
+            </p>
+
+            <div className="flex justify-center gap-4">
+              <a href="#talents" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold hover:scale-105 transition transform shadow-2xl">
+                Yetenekleri Keşfet
+              </a>
+              <a href="#about" className="px-8 py-4 bg-white bg-opacity-10 backdrop-blur-md rounded-full font-semibold hover:bg-opacity-20 transition border border-white border-opacity-20">
+                Daha Fazla Öğren
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="relative py-32 px-6">
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="bg-gradient-to-br from-cyan-900 to-purple-900 bg-opacity-30 backdrop-blur-xl rounded-3xl p-12 border border-white border-opacity-10 shadow-2xl">
+            <Heart className="w-16 h-16 text-cyan-400 mx-auto mb-6" />
+            <blockquote className="text-3xl md:text-4xl font-light text-center leading-relaxed text-gray-200 italic">
+              "Sadık, sen sadece başarmıyorsun; sen ilham veriyorsun."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="relative py-20 px-6">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Bir Bütünden Fazlası
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Bazı insanlar vardır ki, onları tek bir kelimeyle tanımlamak imkansızdır. 
+              Sadık Sarı, sınırları zorlayan bir potansiyelin vücut bulmuş halidir.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-gradient-to-br from-red-900 to-orange-900 bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white border-opacity-10 hover:scale-105 transition transform">
+              <Dumbbell className="w-12 h-12 text-orange-400 mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Estetik ve Gücün Dansı</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Sadık'ı sahada veya sahnede izlemek, fiziksel sınırların nasıl sanatla harmanlandığını görmektir. 
+                Spordaki atletik yapısı sadece kaba kuvvetten ibaret değildir; o, her hareketini bir bale sanatçısının 
+                zarafetiyle hesaplar. Sahadaki hırsı ile sahnedeki "plié"sinin arkasındaki disiplin aynı kaynaktan beslenir: 
+                Mükemmelliğe olan tutkusu.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-900 to-cyan-900 bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white border-opacity-10 hover:scale-105 transition transform">
+              <Brain className="w-12 h-12 text-cyan-400 mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Evrenin Kodlarını Çözen Zihin</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Sadık Sarı için hayat, çözülmesi gereken muazzam bir denklemdir. Matematik onun anadilidir; 
+                sayılarla dans eder. Fizik kuralları onun oyun alanıdır. Kimya laboratuvarında ise elementlerin 
+                dilinden anlayan bir simyacı gibidir. Analitik zekasının keskinliği her alanda kendini gösterir.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900 to-pink-900 bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white border-opacity-10 hover:scale-105 transition transform">
+              <Music className="w-12 h-12 text-pink-400 mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Ruhu Besleyen Yaratıcılık</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Sayısal zekasının yanında, Sadık'ın ruhu bir sanatçı hassasiyetine sahiptir. Müziğin ritmini 
+                sadece kulağıyla değil, kalbiyle duyar. Sanat anlayışı, dünyaya bakışındaki derinliği yansıtır; 
+                renklerin, formların ve estetiğin dilini konuşarak, hayatı daha yaşanılır ve güzel kılar.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-teal-900 to-green-900 bg-opacity-20 backdrop-blur-xl rounded-2xl p-8 border border-white border-opacity-10 hover:scale-105 transition transform">
+              <Cpu className="w-12 h-12 text-teal-400 mb-4" />
+              <h3 className="text-2xl font-bold mb-4">İnşa Eden ve İyileştiren Eller</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Sadık Sarı, teoriyi pratiğe dökme ustasıdır. Mühendislik vizyonuyla karmaşık sistemleri bir araya 
+                getirir, yapıları kurgular ve sorunlara en pratik, en verimli çözümleri üretir. Tıp bilgisi ve 
+                insan sevgisiyle birleştiğinde bambaşka bir boyuta ulaşır. Hayat kurtaran bir vizyona sahiptir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Talents Grid */}
+      <section id="talents" className="relative py-20 px-6">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Çok Yönlü Yetenekler
+            </h2>
+            <p className="text-xl text-gray-300">
+              Beyninin hem sağ hem de sol lobunu aynı mükemmellikte kullanabilen nadir insanlardan
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {talents.map((talent, index) => (
+              <div
+                key={index}
+                className="group relative bg-black bg-opacity-40 backdrop-blur-xl rounded-2xl p-6 border border-white border-opacity-10 hover:scale-105 transition-all duration-300 hover:border-opacity-30"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${talent.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}></div>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${talent.color} mb-4`}>
+                  {talent.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{talent.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{talent.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section id="vision" className="relative py-32 px-6">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="bg-gradient-to-br from-purple-900 to-cyan-900 bg-opacity-30 backdrop-blur-xl rounded-3xl p-16 border border-white border-opacity-10 shadow-2xl text-center">
+            <img 
+              src="https://raw.githubusercontent.com/Arassaklak/images/refs/heads/main/608845905_1886124988957292_4591681918812164445_n-removebg-preview.png"
+              alt="Sadık Sarı"
+              className="w-48 h-48 object-contain mx-auto mb-8 opacity-80"
+            />
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Leonardo da Vinci'nin Modern Yansıması
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Sadık Sarı; sporcunun disiplinine, sanatçının ruhuna, bilim insanının merakına ve mühendisin 
+              pratik zekasına aynı anda sahiptir. O, disiplinler arası mükemmeliyetin canlı bir kanıtıdır. 
+              Sınırları zorlamak, potansiyeli keşfetmek ve sürekli gelişmek onun yaşam felsefesidir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative py-12 px-6 border-t border-white border-opacity-10">
+        <div className="container mx-auto text-center relative z-10">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <Brain className="w-6 h-6 text-cyan-400" />
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Sadık Sarı
+            </span>
+          </div>
+          <p className="text-gray-400">Evrensel Bir Deha - Sınırsız Potansiyel</p>
+          <p className="text-gray-600 text-sm mt-2">© 2025 Tüm hakları saklıdır</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
